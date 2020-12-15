@@ -93,3 +93,9 @@ x = false;  // Error: boolean is not assignable to number
 import type { SomeThing } from './some-module.js';
 export type { SomeThing };
 ```
+
+## `tsconfig.json`
+- `target`: the compiled version of javascript from typescript,  `es6` is good for modern browers.
+- `module`: module system you want to use, like amd, umd, commonjs. [more](https://www.staging-typescript.org/tsconfig#module)
+- `esModuleInterop`: enable this one will also enable `allowSyntheticDefaultImports`
+- `declaration`: will automatically generate .d.ts file for your project (suitable fro lib project)

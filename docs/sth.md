@@ -18,3 +18,11 @@ npx gitignore node
 ```
 bat README.md
 ```
+
+## Init Typescript
+```sh
+yarn tsc --init # this will always work
+```
+
+## ECMAScript version for Node
+- [Node.Green](https://node.green/)
