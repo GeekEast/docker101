@@ -187,3 +187,19 @@ RUN mvn package
 FROM tomcat
 COPY --from=build /app/target/file.war /usr/local/tomcat/webapps
 ```
+
+## multiple-platform build
+- arm64
+```sh
+# run this only once
+docker buildx create --use --name customerBuilder
+
+# build for both arm64 and amd64
+docker buildx build --platform linux/amd64,linux/arm64 -t node-awscli:<version> .
+
+# build for amd64 only
+docker buildx build --platform linux/amd64 -t node-awscli:<version> .
+
+# export image to local docker images
+docker buildx build --platform linux/amd64 -t node-awscli:<version> --load .
+```
